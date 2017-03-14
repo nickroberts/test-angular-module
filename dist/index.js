@@ -3,10 +3,10 @@
 		module.exports = factory(require("angular"));
 	else if(typeof define === 'function' && define.amd)
 		define(["angular"], factory);
-	else {
-		var a = typeof exports === 'object' ? factory(require("angular")) : factory(root["angular"]);
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
+	else if(typeof exports === 'object')
+		exports["testAngularModule"] = factory(require("angular"));
+	else
+		root["testAngularModule"] = factory(root["angular"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_0__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
