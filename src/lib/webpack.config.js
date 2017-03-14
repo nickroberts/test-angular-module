@@ -24,6 +24,12 @@ module.exports = {
     ]
   },
   externals: {
-    angular: 'angular'
+    "angular": {
+      root: 'angular',
+      commonjs2: 'angular',
+      commonjs: 'angular',
+      amd: 'angular'
+    }
   }
+
 }
